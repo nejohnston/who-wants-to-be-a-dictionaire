@@ -43,7 +43,7 @@ const useStyles = makeStyles({
   }
 });
 
-const IntroCard = () => {
+const LoginCard = () => {
   const classes = useStyles();
 
   return (
@@ -82,4 +82,4 @@ const IntroCard = () => {
   );
 }
 
-export default IntroCard
+export default LoginCard

@@ -7,19 +7,19 @@ import AboutContainer from './containers/About'
 import GameContainer from './containers/Game'
 import Layout from './components/Layout'
 
-const Portfolio = () => (
+const WhoWantsToBeAMillionaire = () => (
     <HashRouter>
       <Layout>
         <Route exact path='/' component={HomeContainer} />
         <Route path='/about' component={AboutContainer}/>
-        <Route path='/Game' component={GameContainer}/>
+        <Route path='/game' component={GameContainer}/>
       </Layout>
     </HashRouter>
 )
 
 ReactDOM.render(
   <React.StrictMode>
-    <Portfolio />
+    <WhoWantsToBeAMillionaire />
   </React.StrictMode>,
   document.getElementById('root')
 );

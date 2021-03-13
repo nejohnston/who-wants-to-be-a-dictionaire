@@ -1,5 +1,5 @@
 import React from "react";
-import IntroCard from "../../components/LoginCard";
+import LoginCard from "../../components/LoginCard";
 import {makeStyles} from "@material-ui/core/styles";
 
 const useStyles = makeStyles({
@@ -16,7 +16,7 @@ const Home = () => {
     const classes = useStyles()
     return(
         <div className={classes.cardContainer}>
-            <IntroCard/>
+            <LoginCard/>
         </div>
     )
 }
