@@ -1,0 +1,4 @@
+.appHeaderWrapper {
+  display: flex;
+  justify-content: space-between;
+}
