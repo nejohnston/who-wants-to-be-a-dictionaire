@@ -2,32 +2,40 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const config = {
-    apiKey: "AIzaSyDtq4--6Jf4KJIfBhGn3lCDks2STZRLJKM",
-    projectId: "dictionairegame",
-    authDomain: "dictionairegame.firebaseapp.com",
-    storageBucket: "dictionairegame.appspot.com",
-    messagingSenderId: "1006112093490",
-    appId: "1:1006112093490:web:3234e2ce2dc27f0a90932b"
+    apiKey: `${process.env.REACT_APP_API_KEY}`,
+    projectId: `${process.env.PROJECT_ID}`,
+    authDomain: `${process.env.AUTH_DOMAIN}`,
+    messagingSenderId: `${process.env.MESSAGING_SENDER_ID}`,
+    appId: `${process.env.APP_ID}`
 };
 
 class Firebase {
-    constructor() {
-        firebase.initializeApp(config)
+    // constructor() {
+	// 		console.log("api key: "+process.env.REACT_APP_API_KEY)
+	// 		if (!firebase.apps.length) {
+	// 			firebase.initializeApp(config);
+	// 	 }else {
+	// 			firebase.app(); // if already initialized, use that one
+	// 	 }
+	// 	firebase.auth()
+    // }
+
+	constructor() {
+		firebase.initializeApp(config)
 		this.auth = firebase.auth()
-    }
-
-    login(email, password) {
-		return this.auth.signInWithEmailAndPassword(email, password)
 	}
 
+    async login(email, password) {
+		return await this.auth.signInWithEmailAndPassword(email, password)
+	}
+	
 	logout() {
-		return this.auth.signOut()
+			return this.auth.signOut()
 	}
-
+	
 	async register(email, password) {
 		return await this.auth.createUserWithEmailAndPassword(email, password);
 	}
-
 }
 
 export default new Firebase()

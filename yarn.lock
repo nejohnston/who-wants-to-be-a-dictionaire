@@ -5057,7 +5057,7 @@ dotenv-expand@5.1.0:
   resolved "https://registry.yarnpkg.com/dotenv-expand/-/dotenv-expand-5.1.0.tgz#3fbaf020bfd794884072ea26b1e9791d45a629f0"
   integrity sha512-YXQl1DSa4/PQyRfgrv6aoNjhasp/p4qs9FjJ4q4cQk+8m4r6k4ZSiEyytKG8f8W9gi8WsQtIObNmKd+tMzNTmA==
 
-dotenv@8.2.0:
+dotenv@8.2.0, dotenv@^8.2.0:
   version "8.2.0"
   resolved "https://registry.yarnpkg.com/dotenv/-/dotenv-8.2.0.tgz#97e619259ada750eea3e4ea3e26bceea5424b16a"
   integrity sha512-8sJ78ElpbDJBHNeBzUbUVLsqKdccaa/BXF1uPTw3GrvQTBgrQrtObr2mUrE38vzYd8cEv+m/JBfDLioYcfXoaw==
@@ -5814,7 +5814,7 @@ fastq@^1.6.0:
   dependencies:
     reusify "^1.0.4"
 
-faye-websocket@0.11.3, faye-websocket@^0.11.3:
+faye-websocket@0.11.3, faye-websocket@>=0.6.0, faye-websocket@^0.11.3:
   version "0.11.3"
   resolved "https://registry.yarnpkg.com/faye-websocket/-/faye-websocket-0.11.3.tgz#5c0e9a8968e8912c286639fde977a8b209f2508e"
   integrity sha512-D2y4bovYpzziGgbHYtGCMjlJM36vAl/y+xUyn1C+FVx8szd1E+86KwVw6XvYSzOP8iMpm1X0I4xJD+QtUb36OA==
@@ -5940,6 +5940,27 @@ find-up@^3.0.0:
   integrity sha512-1yD6RmLI1XBfxugvORwlck6f75tYL+iR0jqwsOrOxMZyGYqUuDhJ0l4AXdO1iX/FTs9cBAMEk1gWSEx1kSbylg==
   dependencies:
     locate-path "^3.0.0"
+
+firebase-auth@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/firebase-auth/-/firebase-auth-0.1.2.tgz#de62ff456f649275fc4377e57e7e57bf1dc653e4"
+  integrity sha1-3mL/RW9kknX8Q3flfn5Xvx3GU+Q=
+  dependencies:
+    firebase "^2.3.0"
+    firebase-token-generator "^2.0.0"
+    q "^1.4.1"
+
+firebase-token-generator@^2.0.0:
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/firebase-token-generator/-/firebase-token-generator-2.0.0.tgz#9767d759ec13abdc99ba115fd5ea99d8b93d1206"
+  integrity sha1-l2fXWewTq9yZuhFf1eqZ2Lk9EgY=
+
+firebase@^2.3.0:
+  version "2.4.2"
+  resolved "https://registry.yarnpkg.com/firebase/-/firebase-2.4.2.tgz#4e1119ec0396ca561d8a7acbff1630feac6c0a31"
+  integrity sha1-ThEZ7AOWylYdinrL/xYw/qxsCjE=
+  dependencies:
+    faye-websocket ">=0.6.0"
 
 firebase@^8.3.0:
   version "8.3.0"
@@ -10326,7 +10347,7 @@ punycode@^2.1.0, punycode@^2.1.1:
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-2.1.1.tgz#b58b010ac40c22c5657616c8d2c2c02c7bf479ec"
   integrity sha512-XRsRjdf+j5ml+y/6GKHPZbrF/8p2Yga0JPtdqTIY2Xe5ohJPD9saDJJLPvp9+NSBprVvevdXZybnj2cv8OEd0A==
 
-q@^1.1.2:
+q@^1.1.2, q@^1.4.1:
   version "1.5.1"
   resolved "https://registry.yarnpkg.com/q/-/q-1.5.1.tgz#7e32f75b41381291d04611f1bf14109ac00651d7"
   integrity sha1-fjL3W0E4EpHQRhHxvxQQmsAGUdc=
