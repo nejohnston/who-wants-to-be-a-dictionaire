@@ -47,6 +47,7 @@ const SignUp = () => {
     e.preventDefault();
     try { 
       const response = firebase.register(email, password);
+      
       console.log(response);
     } catch(error) {
       console.log('asdfasdf');

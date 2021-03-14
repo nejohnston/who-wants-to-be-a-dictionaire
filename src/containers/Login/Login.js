@@ -1,7 +1,6 @@
 import React from "react";
+import WelcomeCard from "../../components/WelcomeCard";
 import {makeStyles} from "@material-ui/core/styles";
-import LoginCard from '../../components/LoginCard'
-import SignUpCard from '../../components/SignUpCard'
 
 const useStyles = makeStyles({
   cardContainer: {
@@ -13,13 +12,13 @@ const useStyles = makeStyles({
   }
 });
 
-const AccountHandler = ({signUpOrLogin}) => {
+const Login = () => {
     const classes = useStyles()
     return(
         <div className={classes.cardContainer}>
-            {(signUpOrLogin === "#/sign-in") ? <LoginCard/> : <SignUpCard/>}
+            <WelcomeCard/>
         </div>
     )
 }
 
-export default AccountHandler
+export default Login
