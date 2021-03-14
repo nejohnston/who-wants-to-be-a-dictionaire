@@ -53,10 +53,6 @@ const LoginCard = () => {
     variant="outlined"
     >
       <CardContent className={classes.cardContent}>
-        <CardMedia
-        className={classes.media} 
-        image={profilePicture}
-        />
         <Typography 
         className={classes.title} 
         color="textPrimary"

@@ -13,10 +13,11 @@ const useStyles = makeStyles({
   }
 });
 
-console.log(window.location.hash)
+console.log("hash"+window.location.hash)
 
-const AccountHandler = (signUpOrLogin) => {
+const AccountHandler = ({signUpOrLogin}) => {
     const classes = useStyles()
+    console.log("signUpOrLogin"+signUpOrLogin)
     return(
         <div className={classes.cardContainer}>
             {(signUpOrLogin === "#/sign-in") ? <LoginCard/> : <SignUpCard/>}
