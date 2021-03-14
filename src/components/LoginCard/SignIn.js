@@ -38,7 +38,7 @@ const SignIn = () => {
     console.log('login password ' + password);
     e.preventDefault();
     try {
-        const response = await firebase.login(email, password);
+        const response = await firebase.login(email, password).then(response => {return response.user});
         console.log(response);
     } 
     catch(error) {
@@ -78,6 +78,8 @@ const SignIn = () => {
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
+          {() =>
+          <div>
           <Button
             type="submit"
             fullWidth
@@ -85,9 +87,15 @@ const SignIn = () => {
             color="primary"
             className={classes.submit}
             onClick={handleSubmit}
+            
+              href={`/game`}
           >
             Sign In
-          </Button>
+          </Button></div>
+          
+          }
+          
+
         </form>
     </Container>
   );

@@ -15,9 +15,9 @@ const WhoWantsToBeAMillionaire = () => (
       <Layout>
         <Route exact path='/' component={HomeContainer} />
         <Route exact path='/about' component={AboutContainer}/>
-        <Route exact path='/game' component={GameContainer}/>
-        <Route exact path='/sign-up' component={SignUp} />
-        <Route exact path='/sign-in' component={SignIn} />
+        <Route exact path='/game' render={() => <GameContainer user={this.props.user}/>}/>
+        <Route exact path='/sign-up' component={AccountHandlerContainer} />
+        <Route exact path='/sign-in' component={AccountHandlerContainer} />
       </Layout>
     </HashRouter>
 )
