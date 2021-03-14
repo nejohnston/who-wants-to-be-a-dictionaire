@@ -56,8 +56,9 @@ const LoginCard = () => {
         className={classes.title} 
         color="textPrimary"
         >
-          <SignIn/>
+          Sign In
         </Typography>
+          <SignIn/>
       </CardContent>
       <CardActions className={classes.buttonContainer}>
         <NavLink to='/' className={classes.linkText}>

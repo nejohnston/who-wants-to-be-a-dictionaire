@@ -11,32 +11,26 @@ const config = {
 
 class Firebase {
     constructor() {
-        firebase.initializeApp(config)
-		this.auth = firebase.auth()
+			console.log("api key: "+process.env.REACT_APP_API_KEY)
+			if (!firebase.apps.length) {
+				firebase.initializeApp(config);
+		 }else {
+				firebase.app(); // if already initialized, use that one
+		 }
+		firebase.auth()
     }
-		componentDidMount() {
-			console.log(config.apiKey)
-		};
 
     login(email, password) {
-		return this.auth.signInWithEmailAndPassword(email, password)
-	}
-
-	logout() {
-		return this.auth.signOut()
-	}
-
-	register(email, password) {
-		this.auth.createUserWithEmailAndPassword(email, password).then(function() {
-			let user = this.auth.currentUser;
-			console.log(user);
-			return user;
-		}, function(error) {
-			console.log(error.message);
-			return error.message;
-		});
-	}
-
+			return this.auth.signInWithEmailAndPassword(email, password)
+		}
+	
+		logout() {
+			return this.auth.signOut()
+		}
+	
+		async register(email, password) {
+			return await this.auth.createUserWithEmailAndPassword(email, password);
+		}
 }
 
 export default new Firebase()
