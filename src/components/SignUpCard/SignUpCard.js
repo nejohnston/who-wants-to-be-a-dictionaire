@@ -1,8 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {Card, CardActions, CardContent, Button, IconButton, Typography, CardMedia} from '@material-ui/core';
-import profilePicture from '../../config/assets/images/wwtbam-hero.jpeg'
-import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
+import {Card, CardActions, CardContent, Button, Typography, TextField} from '@material-ui/core';
 import {NavLink} from 'react-router-dom'
 
 const useStyles = makeStyles({
@@ -43,7 +41,7 @@ const useStyles = makeStyles({
   }
 });
 
-const LoginCard = () => {
+const SignUpCard = () => {
   const classes = useStyles();
 
   return (
@@ -52,37 +50,26 @@ const LoginCard = () => {
     variant="outlined"
     >
       <CardContent className={classes.cardContent}>
-        <CardMedia
-        className={classes.media} 
-        image={profilePicture}
-        />
         <Typography 
         className={classes.title} 
         color="textPrimary"
         >
-          SignIn
+          SignUp
         </Typography>
+        <TextField>Hello</TextField>
       </CardContent>
       <CardActions className={classes.buttonContainer}>
         <NavLink to='/' className={classes.linkText}>
           <Button size="small">Back</Button>
         </NavLink>
-        <NavLink to='/sign-up' className={classes.linkText}>
-          <Button size="small">Sign Up</Button>
+        <NavLink to='/sign-in' className={classes.linkText}>
+          <Button size="small">Sign In</Button>
         </NavLink>
       </CardActions>
       <div className={classes.buttonContainer}>
-        {/* <IconButton href="https://github.com/nejohnston/"  size="medium">
-          <AiFillGithub className={classes.icon}/>
-        </IconButton>
-        <IconButton href="https://www.linkedin.com/in/n-johnston/" size="medium">
-          <AiFillLinkedin className={classes.icon}/>
-        </IconButton> */}
-        {/* <Button href="/login">Login</Button> */}
-        {/* <Button href="/sign-up"></Button> */}
       </div>
     </Card>
   );
 }
 
-export default LoginCard
+export default SignUpCard

@@ -60,12 +60,15 @@ const LoginCard = () => {
         className={classes.title} 
         color="textPrimary"
         >
-          SignIn
+          WHO WANTS TO BE A DICTIONAIRE
         </Typography>
       </CardContent>
       <CardActions className={classes.buttonContainer}>
-        <NavLink to='/' className={classes.linkText}>
-          <Button size="small">Back</Button>
+        {/* <NavLink to='/game' className={classes.linkText}>
+          <Button size="small">Game</Button>
+        </NavLink> */}
+        <NavLink to='/sign-in' className={classes.linkText}>
+          <Button size="small">Sign In</Button>
         </NavLink>
         <NavLink to='/sign-up' className={classes.linkText}>
           <Button size="small">Sign Up</Button>
