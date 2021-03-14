@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import firebase from '../../config/firebase';
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -36,13 +37,18 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles();
 
-  const [ name, setName ] = React.useState('');
+  const [ email, setEmail ] = React.useState('');
   const [ password, setPassword ] = React.useState('');
 
   const handleSubmit = (e) => {
-    console.log('login name: ' + name);
+    console.log('login email: ' + email);
     console.log('login password ' + password);
     e.preventDefault();
+    try {
+        firebase.login(email, password).then();
+      } catch(error) {
+        console.log(error.message);
+      }
   };
 
   return (
@@ -52,16 +58,16 @@ const SignIn = () => {
         </Typography>
         <form className={classes.form} noValidate>
             <TextField
-            autoComplete="name"
-            name="Name"
+            autoComplete="email"
+            name="Email"
             variant="outlined"
             required
             fullWidth
-            id="Name"
-            label="Name"
+            id="email"
+            label="Email"
             autoFocus
-            value={name} 
-            onChange={e => setName(e.target.value)}
+            value={email} 
+            onChange={e => setEmail(e.target.value)}
               />
           <TextField
             variant="outlined"

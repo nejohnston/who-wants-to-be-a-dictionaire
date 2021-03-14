@@ -12,6 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import firebase from '../../config/firebase';
 
 const useStyles = makeStyles((theme) => ({
   // paper: {
@@ -36,13 +37,22 @@ const useStyles = makeStyles((theme) => ({
 const SignUp = () => {
   const classes = useStyles();
 
-  const [ name, setName ] = React.useState('');
+  const [ email, setEmail ] = React.useState('');
   const [ password, setPassword ] = React.useState('');
 
   const handleSubmit = (e) => {
-    console.log('A name was submitted: ' + name);
+    console.log('A email was submitted: ' + email);
     console.log('A password was submitted: ' + password);
+
     e.preventDefault();
+    let response = firebase.register(email, password);
+    console.log(response);
+    // try { 
+    //   const response = firebase.register(email, password);
+    //   console.log(response);
+    // } catch(error) {
+    //   console.log('asdfasdf');
+    // }
   };
 
   return (
@@ -51,16 +61,16 @@ const SignUp = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <TextField
-                autoComplete="name"
-                name="Name"
+                autoComplete="email"
+                name="email"
                 variant="outlined"
                 required
                 fullWidth
-                id="Name"
-                label="Name"
+                id="email"
+                label="Email"
                 autoFocus
-                value={name} 
-                onChange={e => setName(e.target.value)}
+                value={email} 
+                onChange={e => setEmail(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
