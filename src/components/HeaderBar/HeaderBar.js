@@ -10,6 +10,7 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
+import Button from '@material-ui/core/Button';
 import {NavLink} from 'react-router-dom';
 import firebase from 'firebase';
 
@@ -47,6 +48,12 @@ const HeaderBar = () => {
     setAnchorEl(event.currentTarget);
   };
 
+  const logOut = async (event) => {
+    event.preventDefault();
+    const response = firebase.logout();
+    console.log(response);
+  };
+
   const handleClose = () => {
     setAnchorEl(null);
   };
@@ -71,6 +78,9 @@ const HeaderBar = () => {
                   </IconButton>
                 </NavLink>
               </div>
+              <Button variant="contained" color="secondary" onClick={logOut}>
+                Signout
+              </Button>
           <IconButton
             aria-controls='simple-menu'
             aria-haspopup='true'
