@@ -7,7 +7,7 @@ import AccountHandler from './AccountHandler'
 class AccountHandlerContainer extends Component {
     constructor(props) {
         super(props);
-        this.state = {signUpOrLogin: window.location}
+        this.state = {signUpOrLogin: window.location.hash}
     }
   
     render() {

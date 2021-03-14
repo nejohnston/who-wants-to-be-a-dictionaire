@@ -4,6 +4,7 @@ import {Card, CardActions, CardContent, Button, IconButton, Typography, CardMedi
 import profilePicture from '../../config/assets/images/wwtbam-hero.jpeg'
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import {NavLink} from 'react-router-dom'
+import SignIn from './SignIn';
 
 const useStyles = makeStyles({
   root: {
@@ -60,7 +61,7 @@ const LoginCard = () => {
         className={classes.title} 
         color="textPrimary"
         >
-          SignIn
+          <SignIn/>
         </Typography>
       </CardContent>
       <CardActions className={classes.buttonContainer}>

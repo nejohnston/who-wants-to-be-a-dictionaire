@@ -2,6 +2,7 @@ import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Card, CardActions, CardContent, Button, Typography, TextField} from '@material-ui/core';
 import {NavLink} from 'react-router-dom'
+import SignUp from './SignUp';
 
 const useStyles = makeStyles({
   root: {
@@ -56,7 +57,7 @@ const SignUpCard = () => {
         >
           SignUp
         </Typography>
-        <TextField>Hello</TextField>
+        <SignUp/>
       </CardContent>
       <CardActions className={classes.buttonContainer}>
         <NavLink to='/' className={classes.linkText}>
@@ -66,8 +67,6 @@ const SignUpCard = () => {
           <Button size="small">Sign In</Button>
         </NavLink>
       </CardActions>
-      <div className={classes.buttonContainer}>
-      </div>
     </Card>
   );
 }

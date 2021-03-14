@@ -13,13 +13,13 @@ const useStyles = makeStyles({
   }
 });
 
-console.log(window.location)
+console.log(window.location.hash)
 
 const AccountHandler = (signUpOrLogin) => {
     const classes = useStyles()
     return(
         <div className={classes.cardContainer}>
-            {(signUpOrLogin === "login") ? <LoginCard/> : <SignUpCard/>}
+            {(signUpOrLogin === "#/sign-in") ? <LoginCard/> : <SignUpCard/>}
         </div>
     )
 }
