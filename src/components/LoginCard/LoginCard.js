@@ -1,7 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import {Card, CardActions, CardContent, Button, IconButton, Typography, CardMedia} from '@material-ui/core';
-import profilePicture from '../../config/assets/images/wwtbam-hero.jpeg'
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import {NavLink} from 'react-router-dom'
 import SignIn from './SignIn';
