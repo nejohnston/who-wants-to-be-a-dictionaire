@@ -40,19 +40,17 @@ const SignUp = () => {
   const [ email, setEmail ] = React.useState('');
   const [ password, setPassword ] = React.useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     console.log('A email was submitted: ' + email);
     console.log('A password was submitted: ' + password);
 
     e.preventDefault();
-    let response = firebase.register(email, password);
-    console.log(response);
-    // try { 
-    //   const response = firebase.register(email, password);
-    //   console.log(response);
-    // } catch(error) {
-    //   console.log('asdfasdf');
-    // }
+    try { 
+      const response = await firebase.register(email, password);
+      console.log(response);
+    } catch(error) {
+      console.log('asdfasdf');
+    }
   };
 
   return (

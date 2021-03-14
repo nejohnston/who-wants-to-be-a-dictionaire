@@ -40,15 +40,17 @@ const SignIn = () => {
   const [ email, setEmail ] = React.useState('');
   const [ password, setPassword ] = React.useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     console.log('login email: ' + email);
     console.log('login password ' + password);
     e.preventDefault();
     try {
-        firebase.login(email, password).then();
-      } catch(error) {
+        firebase.login(email, password);
+        console.log('sucess');
+    } 
+    catch(error) {
         console.log(error.message);
-      }
+    }
   };
 
   return (

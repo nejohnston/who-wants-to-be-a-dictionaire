@@ -2,11 +2,12 @@ import firebase from "firebase/app";
 import "firebase/auth";
 
 const config = {
-    apiKey: process.env.REACT,
-    projectId: process.env.PROJECT_ID,
-    authDomain: process.env.AUTH_DOMAIN,
-    messagingSenderId: process.env.MESSAGING_SENDER_ID,
-    appId: process.env.APP_ID
+    apiKey: "AIzaSyDtq4--6Jf4KJIfBhGn3lCDks2STZRLJKM",
+    projectId: "dictionairegame",
+    authDomain: "dictionairegame.firebaseapp.com",
+    storageBucket: "dictionairegame.appspot.com",
+    messagingSenderId: "1006112093490",
+    appId: "1:1006112093490:web:3234e2ce2dc27f0a90932b"
 };
 
 class Firebase {
@@ -23,15 +24,8 @@ class Firebase {
 		return this.auth.signOut()
 	}
 
-	register(email, password) {
-		this.auth.createUserWithEmailAndPassword(email, password).then(function() {
-			let user = this.auth.currentUser;
-			console.log(user);
-			return user;
-		}, function(error) {
-			console.log(error.message);
-			return error.message;
-		});
+	async register(email, password) {
+		return await this.auth.createUserWithEmailAndPassword(email, password);
 	}
 
 }
