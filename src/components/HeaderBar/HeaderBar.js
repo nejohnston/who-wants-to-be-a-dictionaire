@@ -10,7 +10,8 @@ import {
 } from '@material-ui/core';
 import MenuIcon from '@material-ui/icons/Menu';
 import HomeIcon from '@material-ui/icons/Home';
-import {NavLink} from 'react-router-dom'
+import {NavLink} from 'react-router-dom';
+import firebase from 'firebase';
 
 const useStyles = makeStyles({
   headerContainer: {
@@ -77,14 +78,69 @@ const HeaderBar = () => {
           >
             <MenuIcon />
           </IconButton>
+            { (firebase.auth().currentUser) ? 
+            
           <Menu
-            id='simple-menu'
-            anchorEl={anchorEl}
-            keepMounted
-            open={Boolean(anchorEl)}
-            onClose={handleClose}
-          >
-            {/* <MenuItem>
+          id='simple-menu'
+          anchorEl={anchorEl}
+          keepMounted
+          open={Boolean(anchorEl)}
+          onClose={handleClose}
+        >
+ <MenuItem>
+  <NavLink
+    to='about'
+    offset={-70}
+    duration={750}
+    onClick={handleClose}
+    className={classes.linkText}
+  >
+    Profile
+  </NavLink>
+</MenuItem>
+              
+             <MenuItem>
+              <NavLink
+                to='about'
+                offset={-70}
+                duration={750}
+                onClick={handleClose}
+                className={classes.linkText}
+              >
+                About
+              </NavLink>
+            </MenuItem>
+            </Menu>
+ : 
+ <Menu
+ id='simple-menu'
+ anchorEl={anchorEl}
+ keepMounted
+ open={Boolean(anchorEl)}
+ onClose={handleClose}
+>
+ <MenuItem>
+  <NavLink
+    to='sign-in'
+    offset={-70}
+    duration={750}
+    onClick={handleClose}
+    className={classes.linkText}
+  >
+    Sign In
+  </NavLink>
+</MenuItem>
+<MenuItem>
+              <NavLink
+                to='sign-up'
+                offset={-70}
+                duration={750}
+                onClick={handleClose}
+                className={classes.linkText}
+              >
+                Sign Up
+              </NavLink>
+              {/* <MenuItem>
               <NavLink
                 to='about'
                 offset={-70}
@@ -95,18 +151,11 @@ const HeaderBar = () => {
                 About
               </NavLink>
             </MenuItem> */}
-            <MenuItem>
-              <NavLink
-                to='Game'
-                offset={-70}
-                duration={750}
-                onClick={handleClose}
-                className={classes.linkText}
-              >
-                Game
-              </NavLink>
             </MenuItem>
-          </Menu>
+            </Menu>
+ }
+            
+            
         </Toolbar>
       </AppBar>
     </div>

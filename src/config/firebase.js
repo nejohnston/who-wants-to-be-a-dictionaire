@@ -10,27 +10,32 @@ const config = {
 };
 
 class Firebase {
-    constructor() {
-		// 	if (!firebase.apps.length) {
-		// 		firebase.initializeApp(config);
-		//  }else {
-		// 		firebase.app(); // if already initialized, use that one
-		//  }
-			firebase.initializeApp(config);
-			firebase.auth()
-    }
+    // constructor() {
+	// 		console.log("api key: "+process.env.REACT_APP_API_KEY)
+	// 		if (!firebase.apps.length) {
+	// 			firebase.initializeApp(config);
+	// 	 }else {
+	// 			firebase.app(); // if already initialized, use that one
+	// 	 }
+	// 	firebase.auth()
+    // }
 
-    login(email, password) {
-			return this.auth.signInWithEmailAndPassword(email, password)
-		}
+	constructor() {
+		firebase.initializeApp(config)
+		this.auth = firebase.auth()
+	}
+
+    async login(email, password) {
+		return await this.auth.signInWithEmailAndPassword(email, password)
+	}
 	
-		logout() {
+	logout() {
 			return this.auth.signOut()
-		}
+	}
 	
-		async register(email, password) {
-			return await this.auth.createUserWithEmailAndPassword(email, password)
-		}
+	async register(email, password) {
+		return await this.auth.createUserWithEmailAndPassword(email, password);
+	}
 }
 
 export default new Firebase()

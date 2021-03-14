@@ -45,14 +45,12 @@ const SignUp = () => {
     console.log('A password was submitted: ' + password);
 
     e.preventDefault();
-    // try { 
-      const user = await firebase.register(email, password).then(res => {console.log(res)});
-      console.log(user)
-      // return response
-      // console.log(response);
-    // } catch(error) {
-    //   console.log('asdfasdf');
-    // }
+    try { 
+      const response = firebase.register(email, password);
+      console.log(response);
+    } catch(error) {
+      console.log('asdfasdf');
+    }
   };
 
   return (
