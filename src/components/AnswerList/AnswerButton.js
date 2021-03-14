@@ -1,6 +1,6 @@
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
-import {IconButton, CardMedia, Card, CardActions, CardContent, Typography} from '@material-ui/core';
+import {IconButton, Card, CardActions, CardContent, Typography} from '@material-ui/core';
 import LanguageIcon from '@material-ui/icons/Language'
 import {AiFillGithub} from 'react-icons/ai'
 
@@ -35,7 +35,7 @@ const useStyles = makeStyles({
   }
 });
 
-const IntroCard = ({project, imageUrl}) => {
+const LoginCard = ({project, imageUrl}) => {
   const classes = useStyles();
   
   return (
@@ -63,4 +63,4 @@ const IntroCard = ({project, imageUrl}) => {
   );
 }
 
-export default IntroCard
+export default LoginCard

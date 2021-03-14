@@ -5,25 +5,26 @@ import './index.css';
 import HomeContainer from "./containers/Home";
 import AboutContainer from './containers/About'
 import GameContainer from './containers/Game'
+import AccountHandlerContainer from './containers/AccountHandler'
 import Layout from './components/Layout'
 import SignUp from './components/SignUpCard/SignUp';
 import SignIn from './components/LoginCard/SignIn';
 
-const Portfolio = () => (
+const WhoWantsToBeAMillionaire = () => (
     <HashRouter>
       <Layout>
         <Route exact path='/' component={HomeContainer} />
-        <Route path='/about' component={AboutContainer}/>
-        <Route path='/Game' component={GameContainer}/>
-        <Route exact path='/signup' component={SignUp} />
-        <Route exact path='/signin' component={SignIn} />
+        <Route exact path='/about' component={AboutContainer}/>
+        <Route exact path='/game' component={GameContainer}/>
+        <Route exact path='/sign-up' component={AccountHandlerContainer} />
+        <Route exact path='/sign-in' component={AccountHandlerContainer} />
       </Layout>
     </HashRouter>
 )
 
 ReactDOM.render(
   <React.StrictMode>
-    <Portfolio />
+    <WhoWantsToBeAMillionaire />
   </React.StrictMode>,
   document.getElementById('root')
 );

@@ -4,7 +4,6 @@ import {Card, CardActions, CardContent, Button, IconButton, Typography, CardMedi
 import profilePicture from '../../config/assets/images/wwtbam-hero.jpeg'
 import {AiFillLinkedin, AiFillGithub} from 'react-icons/ai';
 import {NavLink} from 'react-router-dom'
-import SignIn from './SignIn';
 
 const useStyles = makeStyles({
   root: {
@@ -53,16 +52,23 @@ const LoginCard = () => {
     variant="outlined"
     >
       <CardContent className={classes.cardContent}>
+        <CardMedia
+        className={classes.media} 
+        image={profilePicture}
+        />
         <Typography 
         className={classes.title} 
         color="textPrimary"
         >
-          <SignIn/>
+          WHO WANTS TO BE A DICTIONAIRE
         </Typography>
       </CardContent>
       <CardActions className={classes.buttonContainer}>
-        <NavLink to='/' className={classes.linkText}>
-          <Button size="small">Back</Button>
+        {/* <NavLink to='/game' className={classes.linkText}>
+          <Button size="small">Game</Button>
+        </NavLink> */}
+        <NavLink to='/sign-in' className={classes.linkText}>
+          <Button size="small">Sign In</Button>
         </NavLink>
         <NavLink to='/sign-up' className={classes.linkText}>
           <Button size="small">Sign Up</Button>
