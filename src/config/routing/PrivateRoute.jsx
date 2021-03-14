@@ -1,33 +1,20 @@
-import React, { Component } from 'react';
-import { Route, Redirect } from 'react-router-dom'
-import { UserContext } from './App'
 
-const PrivateRoute = ({ component: ComposedComponent, ...rest }) => {
+import React from 'react';
+import { Route, Redirect } from 'react-router-dom';
+import HomeContainer from '../../containers/Home'
+import { isLogin } from '../utils';
 
-  class Authentication extends Component {
+const PrivateRoute = ({component: Component, ...rest}) => {
+    return (
 
-    handleRender = props => {
-      if (!this.props.user) {
-        return <Redirect to="/login" />
-      } else {
-        return <ComposedComponent user={this.props.user} {...props} />
-      }
-    }
-
-    render() {
-      return (
-        <Route {...rest} render={this.handleRender} />
-      );
-    }
-  }
-
-  return (
-    <UserContext.Consumer>
-      {
-        ({ user }) => <Authentication user={user} />
-      }
-    </UserContext.Consumer>
-  )
+        // Show the component only when the user is logged in
+        // Otherwise, redirect the user to /signin page
+        <Route {...rest} render={props => (
+            isLogin() ?
+                <HomeContainer {...props} />
+            : <Redirect to="/signin" />
+        )} />
+    );
 };
 
-export default PrivateRoute
+export default PrivateRoute;

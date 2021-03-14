@@ -2,6 +2,7 @@ import React from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import LoginCard from '../../components/LoginCard'
 import SignUpCard from '../../components/SignUpCard'
+import GameCard from "../../components/GameCard";
 
 const useStyles = makeStyles({
   cardContainer: {
@@ -13,11 +14,11 @@ const useStyles = makeStyles({
   }
 });
 
-const AccountHandler = ({signUpOrLogin}) => {
+const AccountHandler = ({isLoggedIn, signUpOrLogin}) => {
     const classes = useStyles()
     return(
         <div className={classes.cardContainer}>
-            {(signUpOrLogin === "#/sign-in") ? <LoginCard/> : <SignUpCard/>}
+            {(isLoggedIn) ? <GameCard /> : (signUpOrLogin === "#/sign-in") ? <LoginCard/> : <SignUpCard/>}
         </div>
     )
 }
