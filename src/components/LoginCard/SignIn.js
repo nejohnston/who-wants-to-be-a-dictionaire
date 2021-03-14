@@ -38,7 +38,7 @@ const SignIn = () => {
     console.log('login password ' + password);
     e.preventDefault();
     try {
-        firebase.login(email, password);
+        firebase.login(email, password).then(res => {console.log(res)});
         console.log('sucess');
     } 
     catch(error) {

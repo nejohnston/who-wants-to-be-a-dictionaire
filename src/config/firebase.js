@@ -11,13 +11,13 @@ const config = {
 
 class Firebase {
     constructor() {
-			console.log("api key: "+process.env.REACT_APP_API_KEY)
-			if (!firebase.apps.length) {
-				firebase.initializeApp(config);
-		 }else {
-				firebase.app(); // if already initialized, use that one
-		 }
-		firebase.auth()
+		// 	if (!firebase.apps.length) {
+		// 		firebase.initializeApp(config);
+		//  }else {
+		// 		firebase.app(); // if already initialized, use that one
+		//  }
+			firebase.initializeApp(config);
+			firebase.auth()
     }
 
     login(email, password) {
@@ -29,7 +29,7 @@ class Firebase {
 		}
 	
 		async register(email, password) {
-			return await this.auth.createUserWithEmailAndPassword(email, password);
+			return await this.auth.createUserWithEmailAndPassword(email, password)
 		}
 }
 
